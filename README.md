@@ -5,8 +5,11 @@ RapidForge is a streamlined and scalable backend framework designed to help star
 # Installation
 
 ## Repository
+
+```bash
 git clone https://github.com/paddy-shrp/rapidforge.git
 cd rapidforge
+```
 
 ## Setup the Python Environment
 ```bash
