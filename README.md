@@ -10,6 +10,7 @@ An internal API handles efficient routing within the infrastructure, and new ser
 
 ### How your will server look like
 
+<img width="1001" alt="Bildschirmfoto 2024-08-25 um 10 28 23" src="https://github.com/user-attachments/assets/22379ee9-a32a-47bc-afc8-c6dcc377c348">
 
 # Installation
 
@@ -47,6 +48,13 @@ __Run the "startup.py" File__
 4. Download the Pushover-App on IOS or Android
 5. Log in using your Account and Register the Device
 
+## Setup the Services
+
+### Controller
+For Authentication using Auth0
+1. Create an Auth0-Account (https://auth0.com/de/signup)
+2. Create an Auth0-Application
+3. Copy the CLIENT_SECRET, CLIENT_ID, CLIENT_URL into the __settings.json__
 
 # Additional
 
