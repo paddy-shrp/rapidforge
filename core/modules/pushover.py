@@ -4,8 +4,8 @@ from utils import settings
 
 pushover_set = settings.get_main_settings()["pushover"]
 
-TOKEN = pushover_set["token"]
 USER_KEY = pushover_set["user_key"]
+TOKEN = pushover_set["app_token"]
 
 def send_notification(message, prio=0):
     payload = {

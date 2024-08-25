@@ -14,7 +14,6 @@ logging.basicConfig(filename=paths.get_logs_path("internal.log"),
 mongoDB_set = settings.get_main_settings()["mongodb"]
 
 uri = mongoDB_set["uri"]
-uri = uri.replace("<username>", mongoDB_set["username"])
 uri = uri.replace("<password>", mongoDB_set["password"])
 
 client = MongoClient(uri)

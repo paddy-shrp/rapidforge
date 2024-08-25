@@ -9,18 +9,16 @@ def init_settings():
     if not exists(MAIN_SETTINGS_PATH):
         settings = { 
             "timezone": "Europe/Berlin",
-            "services": [],
+            "services": ["forge_controller, forge_dlogger, forge_internal"],
             "mongodb": {
                 "uri": "",
-                "username": "",
                 "password": ""
             },
             "pushover": {
-                "token": "",
-                "user_key": ""
+                "user_key": "",
+                "app_token": "",
             }
         }
-        
         with open(MAIN_SETTINGS_PATH, "w") as file:
             json.dump(settings, file, indent=4)
 
