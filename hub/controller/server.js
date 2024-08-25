@@ -15,7 +15,7 @@ if (isInProduction()) {
     authRequired: false,
     auth0Logout: true,
     secret: process.env.AUTH_CLIENT_SECRET,
-    baseURL: "https://admin.tapit.studio",
+    baseURL: "https://admin.example.com",
     clientID: process.env.AUTH_CLIENT_ID,
     issuerBaseURL: process.env.AUTH_CLIENT_URL
   };
