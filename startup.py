@@ -1,8 +1,8 @@
 import os
 from os.path import exists
 
-from core.modules import services
-from core.utils import settings, paths
+from forge_core.modules import services
+from forge_core.utils import settings, paths
 
 def init_dirs():
     # Resources

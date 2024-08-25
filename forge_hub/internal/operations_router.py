@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.modules import services
+from forge_core.modules import services
 
 router = APIRouter()
 

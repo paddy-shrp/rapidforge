@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.modules import data, mongodb as mdb
+from forge_core.modules import data, mongodb as mdb
 
 router = APIRouter()
 
