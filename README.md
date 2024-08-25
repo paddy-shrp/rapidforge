@@ -8,7 +8,7 @@ RapidForge includes an intuitive Admin Center for managing backend operations, w
 
 An internal API handles efficient routing within the infrastructure, and new services can be easily introduced in the file structure and managed through the Admin Center. For critical error notifications, Pushover integration (account required) provides real-time alerts directly to your phone.
 
-### How your will server look like
+### Overview
 
 <img width="1001" alt="Bildschirmfoto 2024-08-25 um 10 28 23" src="https://github.com/user-attachments/assets/22379ee9-a32a-47bc-afc8-c6dcc377c348">
 
