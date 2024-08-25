@@ -1,0 +1,27 @@
+[Unit]
+Description=Forge Dlogger Service
+After=network.target
+
+[Service]
+User=main
+
+WorkingDirectory=/home/main/rapidforge
+ExecStart=/home/main/rapidforge/systemd/dlogger/commands/startup.sh
+
+# ---- Do not touch ----
+
+# Restart options
+Restart=on-failure
+
+# Logging options
+StandardOutput=syslog
+StandardError=syslog
+
+# Limits
+LimitNOFILE=1024
+
+# Resource control
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target

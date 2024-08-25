@@ -1,0 +1,29 @@
+[Unit]
+Description=Forge Internal-API Service
+After=network.target
+
+[Service]
+User=main
+
+WorkingDirectory=/home/main/rapidforge
+ExecStart=/home/main/rapidforge/systemd/internal/commands/startup.sh
+
+# ExecStart=
+
+# ---- Do not touch ----
+
+# Restart options
+Restart=always
+
+# Logging options
+StandardOutput=syslog
+StandardError=syslog
+
+# Limits
+LimitNOFILE=1024
+
+# Resource control
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target

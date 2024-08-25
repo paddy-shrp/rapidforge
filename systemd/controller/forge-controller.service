@@ -1,0 +1,20 @@
+[Unit]
+Description=Forge Controller Service
+After=network.target
+
+[Service]
+User=main
+
+WorkingDirectory=/home/main/rapidforge/hub/controller
+EnvironmentFile=/home/main/rapidforge/systemd/controller/.env
+
+ExecStart=/usr/bin/node /home/main/rapidforge/hub/controller/server.js
+
+# ---- Do not touch ----
+
+Restart=always
+
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target
