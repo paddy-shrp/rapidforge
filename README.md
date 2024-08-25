@@ -56,6 +56,33 @@ For Authentication using Auth0
 2. Create an Auth0-Application
 3. Copy the CLIENT_SECRET, CLIENT_ID, CLIENT_URL into the __settings.json__
 
+# File Structure
+
+```
+rapidforge/
+├── config/
+│   ├── nginx/
+│   │   ├── admin.example.com
+│   │   ├── example.com
+│   │   └── setup.sh
+│   └── ssl
+├── core/
+│   ├── modules
+│   └── utils
+├── hub/
+│   ├── controller
+│   ├── dlogger
+│   └── internal
+├── systemd/
+│   ├── controller/
+│   │   └── forge-controller.service
+│   ├── dlogger/
+│   │   └── forge-dlogger.service
+│   └── internal/
+│       └── forge-internal.service
+└── startup.py
+```
+
 # Additional
 
 ### Update Requirements (Optional)
