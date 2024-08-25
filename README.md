@@ -62,7 +62,8 @@ __Run the "startup.py" File__
 For Authentication using Auth0
 1. Create an Auth0-Account (https://auth0.com/de/signup)
 2. Create an Auth0-Application
-3. Copy the CLIENT_SECRET, CLIENT_ID, CLIENT_URL into the __settings.json__
+3. Copy the required settings in the __config.json__ in the hub/controller folder
+4. Add Users using Auth0 and Test the Controller using Authentication by change the state in the __config.json__ to "PRODUCTION"
 
 # File Structure
 

@@ -9,7 +9,7 @@ const app = express();
 
 // Authentication
 
-if (isInProduction()) {
+if (inProduction()) {
 
   const auth_config = {
     authRequired: false,
@@ -30,14 +30,14 @@ app.use(express.json());
 
 // Serving static files
 
-if(isInProduction()) {
+if(inProduction()) {
   app.use("/", requiresAuth(), express.static(path.join(__dirname, 'src')));
 } else {
   app.use("/", express.static(path.join(__dirname, 'src')));
 }
 
 app.get("/", (req, res) => {
-  if(isInProduction()) {
+  if(inProduction()) {
     if(req.oidc.isAuthenticated())
       res.sendFile("src/pages/server.html", {root: __dirname});
     else 
@@ -51,7 +51,10 @@ app.get("/profile", requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user));
 });
 
-app.use("/internal", requiresAuth(), proxy("http://localhost:1500"));
+if(inProduction())
+  app.use("/internal", requiresAuth(), proxy("http://localhost:1500"));
+else
+  app.use("/internal", proxy("http://localhost:1500"));
 
 // Running the server
 
@@ -65,6 +68,6 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-function isInProduction() {
+function inProduction() {
   return config.state == "PRODUCTION"
 }
