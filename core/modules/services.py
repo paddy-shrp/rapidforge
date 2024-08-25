@@ -11,12 +11,12 @@ logging.basicConfig(filename=paths.get_logs_path("services.log"),
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S') 
 
-DIR_PATH = "systemd/<name>_service/commands/"
+DIR_PATH = "systemd/<name>/commands/"
 SERVICES = settings.get_main_settings()["services"]
 
 def get_command_path(service_name, op):
     if service_name in SERVICES:
-        return paths.get_main_path(DIR_PATH.replace("<name>", service_name.replace("tapit-", "")) + op + ".sh")
+        return paths.get_main_path(DIR_PATH.replace("<name>", service_name.replace("forge-", "")) + op + ".sh")
     else:
         logging.warning("No service found with the name: " + service_name) 
         return None
