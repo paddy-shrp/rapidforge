@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/output.css" />
+    <script
+      src="https://cdn.plot.ly/plotly-2.34.0.min.js"
+      charset="utf-8"
+    ></script>
+    <title>RapidForge</title>
+  </head>
+  <body class="bg-white font-sans text-slate-950">
+    <iframe
+      src="../components/navbar.html"
+      seamless
+      class="w-full h-12 fixed"
+      scrolling="no"
+    ></iframe>
+
+    <div class="h-14"></div>
+
+    <div
+      class="p-6 flex flex-row w-full justify-around text-center font-mono font-semibold"
+    >
+      <!-- Website -->
+
+      <div>
+        <div>Website</div>
+        <div class="flex justify-center items-center">
+          <svg
+            class="text-slate-950"
+            width="128"
+            height="128"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8.64 4.737A7.97 7.97 0 0 1 12 4a7.997 7.997 0 0 1 6.933 4.006h-.738c-.65 0-1.177.25-1.177.9 0 .33 0 2.04-2.026 2.008-1.972 0-1.972-1.732-1.972-2.008 0-1.429-.787-1.65-1.752-1.923-.374-.105-.774-.218-1.166-.411-1.004-.497-1.347-1.183-1.461-1.835ZM6 4a10.06 10.06 0 0 0-2.812 3.27A9.956 9.956 0 0 0 2 12c0 5.289 4.106 9.619 9.304 9.976l.054.004a10.12 10.12 0 0 0 1.155.007h.002a10.024 10.024 0 0 0 1.5-.19 9.925 9.925 0 0 0 2.259-.754 10.041 10.041 0 0 0 4.987-5.263A9.917 9.917 0 0 0 22 12a10.025 10.025 0 0 0-.315-2.5A10.001 10.001 0 0 0 12 2a9.964 9.964 0 0 0-6 2Zm13.372 11.113a2.575 2.575 0 0 0-.75-.112h-.217A3.405 3.405 0 0 0 15 18.405v1.014a8.027 8.027 0 0 0 4.372-4.307ZM12.114 20H12A8 8 0 0 1 5.1 7.95c.95.541 1.421 1.537 1.835 2.415.209.441.403.853.637 1.162.54.712 1.063 1.019 1.591 1.328.52.305 1.047.613 1.6 1.316 1.44 1.825 1.419 4.366 1.35 5.828Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div>
+          <div id="website_status" class="text-2xl">Stopped</div>
+          <div class="mt-4 flex flex-col space-y-2">
+            <button
+              class="p-2 text-green-600 text-xl ring-2 ring-green-600 hover:bg-green-800"
+              onclick="sendServerOperation('tapit-website', 'start')"
+            >
+              Start
+            </button>
+            <button
+              class="p-2 text-red-600 text-xl ring-2 ring-red-600 hover:bg-red-800"
+              onclick="sendServerOperation('tapit-website', 'stop')"
+            >
+              Stop
+            </button>
+            <button
+              class="p-2 text-orange-300 text-xl ring-2 ring-orange-300 hover:bg-orange-500"
+              onclick="sendServerOperation('tapit-website', 'restart')"
+            >
+              Restart
+            </button>
+          </div>
+          <!-- Space for error messages -->
+        </div>
+      </div>
+
+      <!-- Data Logger -->
+
+      <div>
+        <div class="text-center">Data Logger</div>
+        <div class="flex justify-center items-center">
+          <svg
+            class="text-slate-950"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="128"
+            height="128"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+            />
+          </svg>
+        </div>
+        <div>
+          <div id="dlogger_status" class="text-2xl">Stopped</div>
+          <div class="mt-4 flex flex-col space-y-2">
+            <button
+              class="p-2 text-green-600 text-xl ring-2 ring-green-600 hover:bg-green-800"
+              onclick="sendServerOperation('tapit-dlogger', 'start')"
+            >
+              Start
+            </button>
+            <button
+              class="p-2 text-red-600 text-xl ring-2 ring-red-600 hover:bg-red-800"
+              onclick="sendServerOperation('tapit-dlogger', 'stop')"
+            >
+              Stop
+            </button>
+            <button
+              class="p-2 text-orange-300 text-xl ring-2 ring-orange-300 hover:bg-orange-500"
+              onclick="sendServerOperation('tapit-dlogger', 'restart')"
+            >
+              Restart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internal -->
+
+      <div>
+        <div class="text-center">Internal</div>
+        <div class="flex justify-center items-center">
+          <svg
+            class="text-slate-950"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="128"
+            height="128"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 6c0 1.657-3.134 3-7 3S5 7.657 5 6m14 0c0-1.657-3.134-3-7-3S5 4.343 5 6m14 0v6M5 6v6m0 0c0 1.657 3.134 3 7 3s7-1.343 7-3M5 12v6c0 1.657 3.134 3 7 3s7-1.343 7-3v-6"
+            />
+          </svg>
+        </div>
+        <div>
+          <div id="internal_status" class="text-2xl">Stopped</div>
+          <div class="mt-4 flex flex-col space-y-2">
+            <button
+              class="p-2 text-orange-300 text-xl ring-2 ring-orange-300 hover:bg-orange-500"
+              onclick="sendServerOperation('tapit-internal', 'restart')"
+            >
+              Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-8"></div>
+
+    <div class="ml-4 mr-4 p-6 text-slate-950">
+      <div class="flex flex-col space-y-10">
+        <div class="ring-4 ring-slate-950">
+          <div id="cpu_status" class="p-4 font-bold text-4xl">CPU</div>
+          <div id="cpu_chart" class="h-3/4"></div>
+        </div>
+        <div class="ring-4 ring-slate-950">
+          <div id="memory_status" class="p-4 font-bold text-4xl">MEMORY</div>
+          <div id="memory_chart" class="h-3/4"></div>
+        </div>
+        <div class="ring-4 ring-slate-950">
+          <div id="disk_status" class="p-4 font-bold text-4xl">DISK</div>
+          <div id="disk_chart" class="h-3/4"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-4"></div>
+
+    <iframe
+      src="../components/footer.html"
+      seamless
+      class="w-full"
+      scrolling="no"
+    ></iframe>
+  </body>
+
+  <footer>
+    <script src="../js/utils.js"></script>
+    <script src="../js/http_bridge.js"></script>
+    <script src="../js/server_page.js"></script>
+  </footer>
+</html>
