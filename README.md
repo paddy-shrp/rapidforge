@@ -14,16 +14,6 @@ An internal API handles efficient routing within the infrastructure, and new ser
 
 # Installation
 
-## Repository
-
-Fork the repistory and clone it
-
-```bash
-git clone {repo_link.git}
-git checkout -b startup_branch
-cd rapidforge
-```
-
 ## Setup the Python Environment
 ```bash
 python3 -m venv .venv
