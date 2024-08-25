@@ -50,6 +50,14 @@ __Run the "startup.py" File__
 
 ## Setup the Services
 
+### NGINX
+
+1. Run the ```config/nginx/setup.sh``` File
+2. Create domain sites in the config/nginx/sites Folder
+3. To use the SSL Certificates of your domain follow the Instructions in the SSL Folder
+4. Link SSL with NGINX
+5. Run the ```config/nginx/patch.sh``` File
+
 ### Controller
 For Authentication using Auth0
 1. Create an Auth0-Account (https://auth0.com/de/signup)
