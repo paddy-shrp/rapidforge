@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from rapidforge_core.modules import data, mongodb as mdb
+from core.modules import data, mongodb as mdb
 
 router = APIRouter()
 

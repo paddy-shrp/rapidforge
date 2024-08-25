@@ -1,13 +1,16 @@
-# RapidForge
+# Bzild a Startup in One Week? => RapidForge
 
-RapidForge is a streamlined and scalable backend framework designed to help startups quickly establish and deploy a robust backend infrastructure. Whether you’re launching a new product or iterating on an existing one, RapidForge provides the essential instructions and components to get your backend up and running with minimal effort.
+RapidForge is a streamlined and scalable backend framework designed to help startups quickly establish and deploy a robust backend infrastructure. Whether you’re launching a new product or iterating on an existing one, RapidForge provides the essential components to get your backend up and running with minimal effort.
 
 # Installation
 
 ## Repository
 
+Fork the repistory and clone 
+
 ```bash
-git clone https://github.com/paddy-shrp/rapidforge.git
+git clone {repo_link.git}
+git checkout -b startup_branch
 cd rapidforge
 ```
 

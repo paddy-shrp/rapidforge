@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from rapidforge_core.modules import services
+from core.modules import services
 
 router = APIRouter()
 

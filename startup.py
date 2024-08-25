@@ -1,8 +1,8 @@
 import os
 from os.path import exists
 
-from rapidforge_core.modules import services
-from rapidforge_core.utils import settings, paths
+from core.modules import services
+from core.utils import settings, paths
 
 def init_dirs():
     # Resources
@@ -13,8 +13,9 @@ def init_dirs():
     if not exists(paths.get_logs_path()):
         os.mkdir(paths.get_logs_path())
 
-def init_files():
     settings.get_main_settings()
+
+def init_services():
 
     # Controller Env
     controller_env_path = paths.get_main_path("systemd/controller_service/.env")
@@ -28,6 +29,8 @@ def init_files():
             file.write('PORT=3000\n')
 
 if __name__ == "__main__":
+    init_dirs()
+    init_services()
     result = input("Have the settings been all implemented (y/n)\n")
     if result == "y":
         services.run_services_operation("start")
