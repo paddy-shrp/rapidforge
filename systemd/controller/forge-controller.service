@@ -6,8 +6,6 @@ After=network.target
 User=main
 
 WorkingDirectory=/home/main/rapidforge/hub/controller
-EnvironmentFile=/home/main/rapidforge/systemd/controller/.env
-
 ExecStart=/usr/bin/node /home/main/rapidforge/hub/controller/server.js
 
 # ---- Do not touch ----

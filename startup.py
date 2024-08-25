@@ -1,4 +1,5 @@
 import os
+import json
 from os.path import exists
 
 from core.utils import settings, paths
@@ -16,17 +17,25 @@ def init_dirs():
 
 def init_services():
 
-    # Controller Env
-    # controller_env_path = paths.get_main_path("systemd/controller_service/.env")
+    # Controller
+    controller_config_path = paths.get_main_path("hub/controller/config.json")
 
-    # if not exists(controller_env_path):
-    #     with open(controller_env_path, "w") as file:
-    #         file.write('STATE="PRODUCTION"\n')
-    #         file.write('AUTH_CLIENT_URL=""\n')
-    #         file.write('AUTH_CLIENT_ID=""\n')
-    #         file.write('AUTH_CLIENT_SECRET=""\n')
-    #         file.write('PORT=3000\n')
-    pass
+    controller_settings = {
+        "baseURL": "",
+        "port": 3000,
+        "state": "DEVELOPMENT",
+        "auth0": {
+            "client_secret": "",
+            "client_id": "",
+            "base_url": "",
+            "client_url": ""
+        }
+    }
+    
+    if not exists(controller_config_path):
+        with open(controller_config_path, "w") as file:
+            json.dump(controller_settings, file, indent=4)
+    
 
 if __name__ == "__main__":
     init_dirs()

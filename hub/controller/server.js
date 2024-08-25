@@ -1,5 +1,5 @@
 const path = require("path");
-require('dotenv').config({ path: path.resolve(__dirname, ".env") });
+const config = require('./config.json');
 const proxy = require('express-http-proxy');
 const {auth, requiresAuth } = require("express-openid-connect");
 const express = require("express");
@@ -11,16 +11,16 @@ const app = express();
 
 if (isInProduction()) {
 
-  const config = {
+  const auth_config = {
     authRequired: false,
     auth0Logout: true,
-    secret: process.env.AUTH_CLIENT_SECRET,
-    baseURL: "https://admin.example.com",
-    clientID: process.env.AUTH_CLIENT_ID,
-    issuerBaseURL: process.env.AUTH_CLIENT_URL
+    secret: config.auth0.client_secret,
+    baseURL: config.auth0.client_secret,
+    clientID: config.auth0.client_secret,
+    issuerBaseURL: config.auth0.client_secret
   };
 
-  app.use(auth(config));
+  app.use(auth(auth_config));
 
 } else {
   console.log('Running in development mode without authentication.');
@@ -59,12 +59,12 @@ app.use(cors({
   origin: "*"
 }));
 
-const port = process.env.PORT;
+const port = config.port;
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
 function isInProduction() {
-  return process.env.STATE == "PRODUCTION"
+  return config.state == "PRODUCTION"
 }

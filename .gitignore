@@ -300,3 +300,4 @@ resources
 ssl/*.cer
 ssl/*.key
 .DS_STORE
+hub/*/config.json
