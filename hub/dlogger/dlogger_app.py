@@ -2,7 +2,7 @@ import time
 from threading import Thread
 import numpy as np
 
-from forge_core.modules import data, mongodb as mdb, services, pushover as po
+from core.modules import data, mongodb as mdb, services, pushover as po
 
 def check_service_events():
     for service_name in services.get_services():
