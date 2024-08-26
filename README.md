@@ -1,4 +1,4 @@
-# Build a Startup in One Week? - RapidForge
+# Build a Startup in One Week - RapidForge
 
 RapidForge is a streamlined and scalable backend framework designed to help startups quickly establish and deploy a robust backend infrastructure. Whether you’re launching a new product or iterating on an existing one, RapidForge provides the essential components to get your backend up and running with minimal effort.
 
