@@ -10,7 +10,7 @@ An internal API handles efficient routing within the infrastructure, and new ser
 
 ### Overview
 
-<img width="1001" alt="Bildschirmfoto 2024-08-25 um 10 28 23" src="https://github.com/user-attachments/assets/22379ee9-a32a-47bc-afc8-c6dcc377c348">
+![RapidForge](https://github.com/user-attachments/assets/a4eea0b4-fb2d-4507-bd00-a3d37220e8db)
 
 # Installation
 
