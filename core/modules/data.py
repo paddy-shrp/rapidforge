@@ -1,4 +1,5 @@
 import psutil
+from modules import mongodb as mdb
 
 def get_cpu_info():
     cpu_info_dic = {
@@ -42,3 +43,9 @@ def get_slim_system_info():
         "disk": get_disk_info()["usage"]
     }
     return slim_system_info
+
+def log_system_history():
+    return mdb.add_point("SERVER", "INFO", get_slim_system_info(), with_timestamp=True)
+
+def get_system_history():
+    return mdb.get_points("SERVER", "INFO", with_id=False)

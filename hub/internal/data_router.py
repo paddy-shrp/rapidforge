@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.modules import data, mongodb as mdb
+from core.modules import data
 
 router = APIRouter()
 
@@ -22,4 +22,4 @@ async def get_disk_info():
 
 @router.get("/system_history")
 async def get_system_history():
-    return mdb.get_points("SERVER", "INFO", with_id=False)
+    return data.get_system_history()

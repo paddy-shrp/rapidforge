@@ -11,7 +11,7 @@ def check_service_events():
     return True
 
 def log_data():
-    return mdb.add_point("SERVER", "INFO", data.get_slim_system_info(), with_timestamp=True)
+    return data.log_system_history()
     
 def format_data():
     FORMAT_INTERVAL_SECONDS = 90
