@@ -14,6 +14,20 @@ An internal API handles efficient routing within the infrastructure, and new ser
 
 # Installation
 
+## Setup the repo
+1. Create a private repo that should inherit rapidforge
+2. Clone the repo to your local machine
+3. Add the original rapidforge repo as an remote upstream
+```bash 
+git remote add upstream https://github.com/paddy-shrp/rapidforge.git
+```
+4. [REPEAT ON UPGRADE] Merge the upstream with the origin branch
+```bash
+git fetch upstream
+git merge upstream/main
+git push origin/main
+```
+
 ## Setup the Python Environment
 ```bash
 python3 -m venv .venv
