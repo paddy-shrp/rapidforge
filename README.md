@@ -49,6 +49,12 @@ __Run the "startup.py" File__
 5. Run the ```config/nginx/patch.sh``` File
 
 ### Controller
+
+```bash
+cd hub/controller
+npm install
+```
+
 For Authentication using Auth0
 1. Create an Auth0-Account (https://auth0.com/de/signup)
 2. Create an Auth0-Application
