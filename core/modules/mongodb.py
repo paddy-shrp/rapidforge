@@ -11,10 +11,14 @@ logging.basicConfig(filename=paths.get_logs_path("internal.log"),
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-mongoDB_set = settings.get_main_settings()["mongodb"]
+mongodb_set = settings.get_module_settings("mongodb", 
+                                           {
+                                               "uri": "",
+                                               "password": ""
+                                           })
 
-uri = mongoDB_set["uri"]
-uri = uri.replace("<password>", mongoDB_set["password"])
+uri = mongodb_set["uri"]
+uri = uri.replace("<password>", mongodb_set["password"])
 
 client = MongoClient(uri)
 

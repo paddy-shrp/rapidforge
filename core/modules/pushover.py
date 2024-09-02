@@ -2,7 +2,11 @@ import requests
 
 from utils import settings
 
-pushover_set = settings.get_main_settings()["pushover"]
+pushover_set = settings.get_module_settings("pushover", 
+                                           {
+                                               "user_key": "",
+                                               "app_token": ""
+                                           })
 
 USER_KEY = pushover_set["user_key"]
 TOKEN = pushover_set["app_token"]

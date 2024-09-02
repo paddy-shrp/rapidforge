@@ -25,7 +25,6 @@ git remote add upstream https://github.com/paddy-shrp/rapidforge.git
 ```bash
 git fetch upstream
 git merge upstream/main
-git push origin/main
 ```
 
 ## Setup the Python Environment
