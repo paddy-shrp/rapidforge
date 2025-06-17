@@ -15,9 +15,9 @@ if (inProduction()) {
     authRequired: false,
     auth0Logout: true,
     secret: config.auth0.client_secret,
-    baseURL: config.auth0.client_secret,
-    clientID: config.auth0.client_secret,
-    issuerBaseURL: config.auth0.client_secret
+    baseURL: config.baseURL,
+    clientID: config.auth0.client_id,
+    issuerBaseURL: config.auth0.base_url
   };
 
   app.use(auth(auth_config));
