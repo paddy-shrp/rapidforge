@@ -39,12 +39,12 @@ def run_service_operation(service_name, op):
             process = subprocess.run(path, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         else:
             process = subprocess.run(["sudo", "systemctl", op, service_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        
+
         logging.info("Running - " + service_name + " " + op)
         po.send_notification(service_name + " " + op, 0)
         return True
-    except:
-        logging.error(process.stderr)
+    except Exception as e:
+        logging.error(getattr(e, "stderr", str(e)))
         return False
     
 def run_command(cmd: list[str]):
